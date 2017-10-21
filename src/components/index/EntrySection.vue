@@ -5,6 +5,9 @@
     <div :style="{opacity: (currentOptions === 2) ? 0.2 : 0}" class="entry-bg entry-bg-contest"></div>
     <div :style="{opacity: (currentOptions === 3) ? 0.2 : 0}" class="entry-bg entry-bg-information"></div>
     <transition name="fade-fast">
+      <a class="logo" href="http://www.scu.edu.cn/" target="_blank"></a>
+    </transition>
+    <transition name="fade-fast">
       <div class="function-bar" v-if="currentOptions !== 0 && $root.currentPage === 1" @mouseover="backgroundRecoveryTimeRest">
         <transition name="fade-fast">
           <div class="options options-problem" v-if="currentOptions === 1">
@@ -187,6 +190,21 @@ export default {
   background: url("../../assets/index-bg-information.jpg") top no-repeat;
   background-image: url("../../assets/index-bg-information.jpg");
   background-size: cover;
+}
+
+.logo {
+  z-index: 100;
+  display: block;
+  position: absolute;
+  bottom: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 12.5rem;
+  width: 12.5rem;
+  background: url("../../assets/Sichuan_University_logo.png") top no-repeat;
+  background-image: url("../../assets/Sichuan_University_logo.png");
+  background-size: cover;
+  opacity: 0.2;
 }
 
 .function-bar {

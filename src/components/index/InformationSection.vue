@@ -23,35 +23,23 @@
                 <h2>公告</h2>
               </div>
               <div class="content">
-                <div class="am-g">
-                  <div class="highlight am-u-sm-4">
-                    2017-10-19
-                  </div>
-                  <div class="am-u-sm-8">
-                    测试一下哦
-                  </div>
-                </div>
-                <div class="am-g">
-                  <div class="highlight am-u-sm-4">
-                    2017-10-18
-                  </div>
-                  <div class="am-u-sm-8">
-                    测试一下哦
-                  </div>
-                </div>
-                <div class="am-g">
-                  <div class="highlight am-u-sm-4">
-                    2017-10-17
-                  </div>
-                  <div class="am-u-sm-8">
-                    测试一下哦
-                  </div>
-                </div>
-                <div class="am-g">
-                  <div class="am-u-sm-12">
-                    <a href="#" style="display: inline-block; margin-top: 1rem;">查看全部公告</a>
-                  </div>
-                </div>
+                <table class="am-table am-table-hover am-table-compact">
+                  <thead>
+                    <tr>
+                      <th>标题</th>
+                      <th>时间</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="item in $root.announcementList.slice(0,3)" :key="item.id">
+                      <td>
+                        <a href="#" target="_blank">{{item.title}}</a>
+                      </td>
+                      <td>{{item.time}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <a href="#" style="display: inline-block; margin-top: 0;" data-am-modal="{target: '#announcement-list-popup'}">查看全部公告</a>
               </div>
             </div>
             <div class="card">
@@ -77,7 +65,7 @@
                     </tr>
                   </tbody>
                 </table>
-                <a href="#" style="display: inline-block; margin-top: 1rem;">查看全部私信</a>
+                <a href="#" style="display: inline-block; margin-top: 1rem;" data-am-modal="{target: '#message-list-popup'}">查看全部私信</a>
               </div>
             </div>
             <div class="card">
@@ -87,9 +75,6 @@
               <div class="content">
                 <p>邮箱：
                   <a href="mailto:hwoam@outlook.com">hwoam@outlook.com</a>
-                </p>
-                <p>QQ：
-                  <a href="http://wpa.qq.com/msgrd?v=3&uin=&site=qq&menu=yes">1095875055</a>
                 </p>
               </div>
             </div>

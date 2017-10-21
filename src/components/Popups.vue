@@ -86,5 +86,59 @@
         </div>
       </div>
     </div>
+    <div class="am-popup" id="message-list-popup">
+      <div class="am-popup-inner">
+        <div class="am-popup-hd">
+          <h4 class="am-popup-title">查看全部私信</h4>
+          <span data-am-modal-close class="am-close">&times;</span>
+        </div>
+        <div class="am-popup-bd">
+          <table class="am-table am-table-hover am-table-compact">
+            <thead>
+              <tr>
+                <th>发件人</th>
+                <th>标题</th>
+                <th>时间</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="item in $root.messageList" :key="item.id">
+                <td>{{item.addresser}}</td>
+                <td>
+                  <a href="#" target="_blank">{{item.title}}</a>
+                </td>
+                <td>{{item.time}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="am-popup" id="announcement-list-popup">
+      <div class="am-popup-inner">
+        <div class="am-popup-hd">
+          <h4 class="am-popup-title">查看全部公告</h4>
+          <span data-am-modal-close class="am-close">&times;</span>
+        </div>
+        <div class="am-popup-bd">
+          <table class="am-table am-table-hover am-table-compact">
+            <thead>
+              <tr>
+                <th>标题</th>
+                <th>时间</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="item in $root.announcementList" :key="item.id">
+                <td>
+                  <a href="#" target="_blank">{{item.title}}</a>
+                </td>
+                <td>{{item.time}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
 </template>

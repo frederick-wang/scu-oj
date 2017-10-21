@@ -31,7 +31,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr v-for="item in $root.submitList.slice(0,5)" :key="item.id">
+                    <tr v-for="item in $root.submitList.slice(0,4)" :key="item.id">
                       <td>[{{item.number}}]</td>
                       <td>
                         <a :href="item.link" target="_blank">{{item.name}}</a>
@@ -40,7 +40,7 @@
                     </tr>
                   </tbody>
                 </table>
-                <a href="#" style="display: inline-block; margin-top: 1rem;" data-am-modal="{target: '#submit-list-popup'}">查看全部提交记录</a>
+                <a href="#" style="display: inline-block; margin-top: 0;" data-am-modal="{target: '#submit-list-popup'}">查看全部提交记录</a>
               </div>
             </div>
             <div class="card">
@@ -50,44 +50,67 @@
               <div class="content">
                 <div class="discuss-item">
                   <div class="am-g">
-                    <div class="am-u-sm-2 user">
-                      <div class="avatar">
-                        <img src="../../assets/bilibili.png" class="am-img-responsive am-circle am-img-thumbnail" alt="讨论用户头像">
-                      </div>
-                      <div class="name"><a href="#">王兆基</a></div>
+                    <div class="am-u-sm-2">
+                      <a href="#" class="user">
+                        <div class="avatar">
+                          <img src="../../assets/bilibili.png" class="am-img-responsive am-circle am-img-thumbnail" alt="讨论用户头像">
+                        </div>
+                        <div class="name">
+                          王兆基
+                        </div>
+                      </a>
                     </div>
                     <div class="am-u-sm-7 middle">
-                      <div class="title am-text-truncate">这道题的数据范围怎么这么大，感觉很难过</div>
-                      <div class="abstract am-text-truncate">那时候刚好下着雨，柏油路面湿冷冷的，还闪烁着青、黄、红颜色的灯火。我们就在骑楼下躲雨，看绿色的邮筒孤独地站在街的对面。我白色风衣的大口袋里有一封要寄给南部的母亲的信。樱子说她可以撑伞过去帮我寄信。我默默点头。</div>
-                      <div class="submit-time gray">in <a href="#">[2312] 最短路计数</a>&nbsp;&nbsp;@2017-10-21 16:49:04</div>
+                      <div class="title am-text-truncate">
+                        <a href="#">这道题的数据范围怎么这么大，感觉很难过</a>
+                      </div>
+                      <div class="abstract am-text-truncate">
+                        <a href="#">那时候刚好下着雨，柏油路面湿冷冷的，还闪烁着青、黄、红颜色的灯火。我们就在骑楼下躲雨，看绿色的邮筒孤独地站在街的对面。</a>
+                      </div>
+                      <div class="submit-time gray">in
+                        <a href="#">[2312] 最短路计数</a>&nbsp;&nbsp;@2017-10-21 16:49:04</div>
                     </div>
                     <div class="am-u-sm-3 right">
                       <div class="reply-number">128 个回复</div>
-                      <div class="reply-new">最新回复：朱嘉宁</div>
-                      <div class="reply-time gray">@2017-10-21 17:13:14</div>
+                      <div class="reply-new">
+                        <a href="#">最新回复：朱嘉宁</a>
+                      </div>
+                      <div class="reply-time gray">@2017-10-21 19:39:00</div>
                     </div>
                   </div>
                 </div>
                 <div class="discuss-item">
                   <div class="am-g">
-                    <div class="am-u-sm-2 user">
-                      <div class="avatar">
-                        <img src="../../assets/bilibili.png" class="am-img-responsive am-circle am-img-thumbnail" alt="讨论用户头像">
-                      </div>
-                      <div class="name"><a href="#">王兆基</a></div>
+                    <div class="am-u-sm-2">
+                      <a href="#" class="user">
+                        <div class="avatar">
+                          <img src="../../assets/bilibili.png" class="am-img-responsive am-circle am-img-thumbnail" alt="讨论用户头像">
+                        </div>
+                        <div class="name">
+                          王兆基
+                        </div>
+                      </a>
                     </div>
                     <div class="am-u-sm-7 middle">
-                      <div class="title am-text-truncate">这道题的数据范围怎么这么大，感觉很难过</div>
-                      <div class="abstract am-text-truncate">那时候刚好下着雨，柏油路面湿冷冷的，还闪烁着青、黄、红颜色的灯火。我们就在骑楼下躲雨，看绿色的邮筒孤独地站在街的对面。我白色风衣的大口袋里有一封要寄给南部的母亲的信。樱子说她可以撑伞过去帮我寄信。我默默点头。</div>
-                      <div class="submit-time gray">in <a href="#">[2312] 最短路计数</a>&nbsp;&nbsp;@2017-10-21 16:49:04</div>
+                      <div class="title am-text-truncate">
+                        <a href="#">打表能不能做出来这道题？</a>
+                      </div>
+                      <div class="abstract am-text-truncate">
+                        <a href="#">我白色风衣的大口袋里有一封要寄给南部的母亲的信。樱子说她可以撑伞过去帮我寄信。我默默点头。</a>
+                      </div>
+                      <div class="submit-time gray">in
+                        <a href="#">[1453] 传染病控制 </a>&nbsp;&nbsp;@2017-10-21 16:49:04</div>
                     </div>
                     <div class="am-u-sm-3 right">
-                      <div class="reply-number">128 个回复</div>
-                      <div class="reply-new">最新回复：朱嘉宁</div>
+                      <div class="reply-number">23 个回复</div>
+                      <div class="reply-new">
+                        <a href="#">最新回复：时佳音</a>
+                      </div>
                       <div class="reply-time gray">@2017-10-21 17:13:14</div>
                     </div>
                   </div>
                 </div>
+                <a href="#" style="display: inline-block; margin-top: 1rem;" data-am-modal="{target: '#submit-list-popup'}">查看全部近期讨论记录</a>
               </div>
             </div>
           </div>
@@ -175,11 +198,20 @@ export default {
 
 <style scoped>
 .discuss-item {
-  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.discuss-item:hover {
+  background: #eef4fa;
+  background-color: #eef4fa;
 }
 
 .discuss-item:last-child {
   margin-bottom: 0;
+}
+
+.discuss-item .user {
+  display: block;
 }
 
 .discuss-item .avatar {
@@ -192,11 +224,17 @@ export default {
   text-align: center;
 }
 
-.discuss-item .user .name a{
+.discuss-item .middle .title a,
+.discuss-item .middle .abstract a,
+.discuss-item .right .reply-new a,
+.discuss-item .user {
   color: #262626;
 }
 
-.discuss-item .user .name a:hover{
+.discuss-item .middle .title a:hover,
+.discuss-item .middle .abstract a:hover,
+.discuss-item .right .reply-new a:hover,
+.discuss-item .user:hover {
   color: #3e7ac2;
 }
 
