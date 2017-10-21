@@ -48,66 +48,36 @@
                   </div>
                 </div>
                 <div class="am-g">
-                  <div class="highlight am-u-sm-4">
-                    2017-10-16
-                  </div>
-                  <div class="am-u-sm-8">
-                    测试一下哦
-                  </div>
-                </div>
-                <div class="am-g">
-                  <div class="highlight am-u-sm-4">
-                    2017-10-15
-                  </div>
-                  <div class="am-u-sm-8">
-                    测试一下哦
-                  </div>
-                </div>
-                <div class="am-g">
-                  <div class="highlight am-u-sm-4">
-                    2017-10-15
-                  </div>
-                  <div class="am-u-sm-8">
-                    测试一下哦
-                  </div>
-                </div>
-                <div class="am-g">
-                  <div class="highlight am-u-sm-4">
-                    2017-10-15
-                  </div>
-                  <div class="am-u-sm-8">
-                    测试一下哦
-                  </div>
-                </div>
-                <div class="am-g">
-                  <div class="highlight am-u-sm-4">
-                    2017-10-15
-                  </div>
-                  <div class="am-u-sm-8">
-                    测试一下哦
-                  </div>
-                </div>
-                <div class="am-g">
-                  <div class="highlight am-u-sm-4">
-                    2017-10-15
-                  </div>
-                  <div class="am-u-sm-8">
-                    测试一下哦
-                  </div>
-                </div>
-                <div class="am-g">
-                  <div class="highlight am-u-sm-4">
-                    2017-10-15
-                  </div>
-                  <div class="am-u-sm-8">
-                    测试一下哦
-                  </div>
-                </div>
-                <div class="am-g">
                   <div class="am-u-sm-12">
                     <a href="#" style="display: inline-block; margin-top: 1rem;">查看全部公告</a>
                   </div>
                 </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="header">
+                <h2>私信</h2>
+              </div>
+              <div class="content">
+                <table class="am-table am-table-hover am-table-compact">
+                  <thead>
+                    <tr>
+                      <th>发件人</th>
+                      <th>标题</th>
+                      <th>时间</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="item in $root.messageList.slice(0,3)" :key="item.id">
+                      <td>{{item.addresser}}</td>
+                      <td>
+                        <a href="#" target="_blank">{{item.title}}</a>
+                      </td>
+                      <td>{{item.time}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <a href="#" style="display: inline-block; margin-top: 1rem;">查看全部私信</a>
               </div>
             </div>
             <div class="card">
@@ -164,79 +134,17 @@
                 </div>
               </div>
             </div>
-            <div class="card">
-              <!-- <h2 class="more-btn">查看全部</h2> -->
-              <div class="header">
-                <h2>评测记录</h2>
-              </div>
-              <div class="content">
-                <div class="am-g">
-                  <div class="highlight am-u-sm-3">
-                    [1024]
-                  </div>
-                  <div class="am-u-sm-6">
-                    A+B Problem X
-                  </div>
-                  <div class="am-u-sm-3">
-                    Accepted
-                  </div>
-                </div>
-                <div class="am-g">
-                  <div class="highlight am-u-sm-3">
-                    [2048]
-                  </div>
-                  <div class="am-u-sm-6">
-                    一元三次方程求解
-                  </div>
-                  <div class="am-u-sm-3">
-                    Accepted
-                  </div>
-                </div>
-                <div class="am-g">
-                  <div class="highlight am-u-sm-3">
-                    [1536]
-                  </div>
-                  <div class="am-u-sm-6">
-                    加分二叉树
-                  </div>
-                  <div class="am-u-sm-3">
-                    Accepted
-                  </div>
-                </div>
-                <div class="am-g">
-                  <div class="highlight am-u-sm-3">
-                    [1453]
-                  </div>
-                  <div class="am-u-sm-6">
-                    传染病控制
-                  </div>
-                  <div class="am-u-sm-3">
-                    Failed
-                  </div>
-                </div>
-                <div class="am-g">
-                  <div class="highlight am-u-sm-3">
-                    [666]
-                  </div>
-                  <div class="am-u-sm-6">
-                    装箱问题
-                  </div>
-                  <div class="am-u-sm-3">
-                    Accepted
-                  </div>
-                </div>
-                <div class="am-g">
-                  <div class="am-u-sm-12">
-                    <a href="#" style="display: inline-block; margin-top: 1rem;">查看全部评测记录</a>
-                  </div>
-                </div>
-              </div>
-            </div>
             <div class="card statistics">
               <div class="header">
-                <h2>刷题统计</h2>
+                <h2>刷题情况统计</h2>
               </div>
               <div class="content">
+                <div class="am-g">
+                  <div class="am-u-sm-12">
+                    <div id="chart" style="width: 100%; height:25rem; margin-bottom: 2rem;">
+                    </div>
+                  </div>
+                </div>
                 <div class="am-g">
                   <div class="highlight am-u-sm-6">
                     总通过量：
@@ -255,7 +163,7 @@
                 </div>
                 <div class="am-g">
                   <div class="am-u-sm-12">
-                    <a href="#" style="display: inline-block; margin-top: 1rem;">查看详细统计数据及图表</a>
+                    <a href="#" style="display: inline-block; margin-top: 1rem;">查看详细统计数据</a>
                   </div>
                 </div>
               </div>
@@ -279,6 +187,8 @@ export default {
     clickLogo () {
       window.$.fn.fullpage.moveTo(1)
     }
+  },
+  mounted () {
   }
 }
 </script>

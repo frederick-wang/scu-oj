@@ -5,9 +5,7 @@
       <div class="nav-bar-wrapper" v-if="$root.currentPage === 3">
         <div class="nav-bar">
           <div class="item logo" @click="clickLogo">SCU Online Judge</div>
-          <div class="item">我正在参加的比赛</div>
-          <div class="item">我的排名</div>
-          <div class="item">所有比赛列表</div>
+          <div class="item">参加比赛</div>
           <div class="item">举办比赛</div>
           <div class="item logout float-right">退出登录状态</div>
           <div class="item logout float-right" @click="clickLogo">王兆基</div>
@@ -15,8 +13,8 @@
       </div>
     </transition>
     <transition name="fade">
-      <div class="container" v-if="$root.currentPage === 3" style="height: 100%;">
-        <div class="am-g am-g-fixed" style="height: 100%;">
+      <div class="container" v-if="$root.currentPage === 3">
+        <div class="am-g am-g-fixed">
           <div class="am-u-sm-8" style="padding-right: 0;">
             <div class="card">
               <div class="header">
@@ -72,7 +70,7 @@
               </div>
             </div>
           </div>
-          <div class="am-u-sm-4" style="height: 100%; padding-left: 0;">
+          <div class="am-u-sm-4" style="padding-left: 0;">
             <div class="card current-contest">
               <div class="header">
                 <div class="title">正在参加</div>
@@ -120,7 +118,7 @@
                       总耗时
                     </div>
                     <div class="am-u-sm-6 am-text-center">
-                      15 小时 28 分钟
+                      15 小时 28 分
                     </div>
                   </div>
                   <div class="am-g">
@@ -134,7 +132,7 @@
                   <br/>
                   <button class="am-btn am-btn-default am-btn-block">
                     <i class="am-icon-check"></i>
-                    继续刚题
+                    继续刚比赛
                   </button>
                 </div>
               </div>
@@ -180,15 +178,6 @@ export default {
 </script>
 
 <style scoped>
-/* .current-contest {
-  position: absolute;
-  top: 1rem;
-  bottom: 1rem;
-  left: 1rem;
-  right: 3rem;
-  margin: 0;
-} */
-
 .current-contest .title {
   text-align: center;
   font-size: 2rem;
@@ -202,14 +191,6 @@ export default {
 .current-contest .status {
   margin-top: 2rem;
 }
-
-/* .current-contest .image {
-  background: url("../../assets/icpc_logo.png") top no-repeat;
-  background-image: url("../../assets/icpc_logo.png");
-  background-size: cover;
-  height: 20rem;
-  margin: 1rem 1rem;
-} */
 
 .section-contest {
   width: 100%;
