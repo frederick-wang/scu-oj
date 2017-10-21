@@ -45,7 +45,7 @@
             </div>
             <div class="card">
               <div class="header">
-                <h1>近期讨论记录</h1>
+                <h2>近期讨论记录</h2>
               </div>
               <div class="content">
                 <div class="discuss-item">
