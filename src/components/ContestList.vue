@@ -1,10 +1,10 @@
 <template>
-  <div class="problem-list">
+  <div class="contest-list">
     <transition name="fade">
       <div class="nav-bar-wrapper">
         <div class="nav-bar">
           <div class="item logo" @click="clickLogo">SCU Online Judge</div>
-          <div class="search-problem-wrapper" :style="{ width : largeInput ? '50%' : '20%', opacity : largeInput ? '1' : '0.5'}">
+          <div class="search-contest-wrapper" :style="{ width : largeInput ? '50%' : '20%', opacity : largeInput ? '1' : '0.5'}">
             <div class="input-wrapper">
               <!-- <div class="am-input-group"> -->
               <!-- <span class="am-input-group-btn">
@@ -12,7 +12,7 @@
                           <span class="am-icon-search"></span>
                         </button>
                       </span> -->
-              <input type="text" class="am-form-field" placeholder="在这里搜索题目" @focus="largeInput = true" @blur="largeInput = false">
+              <input type="text" class="am-form-field" placeholder="在这里搜索比赛" @focus="largeInput = true" @blur="largeInput = false">
               <!-- </div> -->
             </div>
           </div>
@@ -25,18 +25,19 @@
       <div class="container">
         <div class="am-g am-g-fixed">
           <div class="am-u-sm-12">
-            <div class="card problem-list-header">
+            <div class="card contest-list-header">
               <div class="content">
-                <div class="problem-list-left">
-                  <h1 class="title">题目列表</h1>
+                <div class="contest-list-left">
+                  <h1 class="title">比赛列表</h1>
                   <div class="motto gray">
-                    <span>海纳百川，有容乃大；壁立千仞，无欲则刚。耐心刷题，戒骄戒躁，金牌就在前方。</span>
+                    <span>刷题虽爽，来参加比赛更刺激哦。</span>
                   </div>
                 </div>
                 <div class="buttons">
-                  <a href="javascript:" class="item am-icon-btn am-success am-icon-sort-amount-asc" id="button-sort-difficulity"></a>
-                  <a href="javascript:" class="item am-icon-btn am-primary am-icon-sort-alpha-asc" id="button-sort-alpha"></a>
-                  <a href="javascript:" class="item am-icon-btn am-secondary am-icon-sort-numeric-asc" id="button-sort-numeric"></a>
+                  <a href="javascript:" class="item am-icon-btn am-success am-icon-sort-amount-asc" id="button-sort-type"></a>
+                  <a href="javascript:" class="item am-icon-btn am-secondary am-icon-sort-alpha-asc" id="button-sort-alpha"></a>
+                  <a href="javascript:" class="item am-icon-btn am-primary am-icon-sort-numeric-asc" id="button-sort-numeric"></a>
+                  <a href="javascript:" class="item am-icon-btn am-primary am-icon-calendar-check-o" id="button-sort-time"></a>
                 </div>
               </div>
             </div>
@@ -44,11 +45,11 @@
         </div>
         <div class="am-g am-g-fixed">
           <div class="am-u-sm-12">
-            <div class="card problems" v-for="n in 20" :key="n">
+            <div class="card contests" v-for="n in 20" :key="n">
               <div class="content">
                 <div class="information">
                   <span class="number">[{{1000 + n}}]</span>
-                  <span class="title">健康的荷斯坦奶牛 Healthy Holsteins</span>
+                  <span class="title">SCU ACM 第 {{n}} 次训练赛</span>
                 </div>
                 <div class="status">
                   <a href="javascript:" class="am-icon-btn am-success am-icon-check" v-if="n <= 5"></a>
@@ -124,22 +125,29 @@ export default {
   mounted () {
     let $ = window.$
     $(function () {
-      $('#button-sort-numeric').popover({
-        content: '按照题号排序',
-        trigger: 'hover focus',
-        theme: 'secondary sm'
-      })
-    })
-    $(function () {
-      $('#button-sort-alpha').popover({
-        content: '按照名称排序',
+      $('#button-sort-time').popover({
+        content: '按照比赛时间排序',
         trigger: 'hover focus',
         theme: 'primary sm'
       })
     })
     $(function () {
-      $('#button-sort-difficulity').popover({
-        content: '按照难度排序',
+      $('#button-sort-numeric').popover({
+        content: '按照比赛序号排序',
+        trigger: 'hover focus',
+        theme: 'primary sm'
+      })
+    })
+    $(function () {
+      $('#button-sort-alpha').popover({
+        content: '按照比赛名称排序',
+        trigger: 'hover focus',
+        theme: 'secondary sm'
+      })
+    })
+    $(function () {
+      $('#button-sort-type').popover({
+        content: '按照比赛类型排序',
         trigger: 'hover focus',
         theme: 'success sm'
       })
@@ -149,12 +157,12 @@ export default {
 </script>
 
 <style scoped>
-.problem-list {
+.contest-list {
   width: 100%;
   font-weight: lighter;
 }
 
-.problem-list .container {
+.contest-list .container {
   width: 100%;
   padding-top: 5rem;
 }
@@ -198,7 +206,7 @@ export default {
   padding-right: 1rem;
 }
 
-.nav-bar .search-problem-wrapper {
+.nav-bar .search-contest-wrapper {
   position: absolute;
   top: 50%;
   left: 19rem;
@@ -212,36 +220,36 @@ export default {
   float: right;
 }
 
-.problem-list-header {
+.contest-list-header {
   padding: 0.8rem 2rem;
   margin-bottom: 0;
   height: 8rem;
 }
 
-.problem-list-header .problem-list-left {
+.contest-list-header .contest-list-left {
   float: left;
 }
 
-.problem-list-header .buttons {
+.contest-list-header .buttons {
   position: absolute;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
 }
 
-.problem-list-header .buttons .item:first-child {
+.contest-list-header .buttons .item:first-child {
   margin-right: 0;
 }
 
-.problem-list-header .buttons .item {
+.contest-list-header .buttons .item {
   float: right;
   margin: 0 1rem;
   opacity: 0.5;
   transition: opacity 0.2s linear;
 }
 
-.problem-list-header .buttons .item:hover,
-.problem-list-header .buttons .item:focus {
+.contest-list-header .buttons .item:hover,
+.contest-list-header .buttons .item:focus {
   opacity: 1;
 }
 
@@ -253,24 +261,24 @@ export default {
   font-size: 1.2rem;
 }
 
-.problems {
+.contests {
   height: 6rem;
 }
 
-.problems .information {
+.contests .information {
   float: left;
 }
 
-.problems .information .number {
+.contests .information .number {
   font-weight: normal;
   margin-right: 1rem;
 }
 
-.problems .status {
+.contests .status {
   float: right;
 }
 
-.problems .status .am-icon-btn {
+.contests .status .am-icon-btn {
   width: 2.4rem;
   height: 2.4rem;
   font-size: 1.2rem;

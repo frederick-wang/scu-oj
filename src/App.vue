@@ -116,4 +116,11 @@ body {
   padding-bottom: 1.6rem;
   margin: 1rem;
 }
+
+.card-narrow-padding {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
 </style>

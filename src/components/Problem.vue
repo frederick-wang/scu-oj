@@ -307,9 +307,6 @@ h3:first-child {
   margin-bottom: 0.5rem;
 }
 
-.problem-header {
-  padding: 0.8rem 2rem;
-}
 .discuss-item {
   padding: 1rem;
 }
@@ -364,6 +361,7 @@ h3:first-child {
 }
 
 .problem-header {
+  padding: 0.8rem 2rem;
   margin-bottom: 0;
   height: 8rem;
 }

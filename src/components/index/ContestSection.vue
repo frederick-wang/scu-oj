@@ -5,7 +5,7 @@
       <div class="nav-bar-wrapper" v-if="$root.currentPage === 3">
         <div class="nav-bar">
           <div class="item logo" @click="clickLogo">SCU Online Judge</div>
-          <div class="item">参加比赛</div>
+          <div class="item" @click="$router.push('/contest_list')">参加比赛</div>
           <div class="item">举办比赛</div>
           <div class="item logout float-right">退出登录状态</div>
           <div class="item logout float-right" @click="clickLogo">王兆基</div>
