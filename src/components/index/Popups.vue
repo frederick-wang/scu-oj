@@ -17,11 +17,9 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="item in $root.ojContestsInformation" :key="item.id">
+              <tr v-for="item in $root.ojContestsInformation" :key="item.id" @click="$root.openLink(item.link)" style="cursor: pointer;">
                 <td>{{item.oj}}</td>
-                <td>
-                  <a :href="item.link" target="_blank">{{item.name}}</a>
-                </td>
+                <td>{{item.name}}</td>
                 <td>{{item.start_time}}</td>
                 <td>{{item.access}}</td>
               </tr>
@@ -46,10 +44,8 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="item in $root.scuOjContestsInformation" :key="item.id">
-                <td>
-                  <a :href="item.link" target="_blank">{{item.name}}</a>
-                </td>
+              <tr v-for="item in $root.scuOjContestsInformation" :key="item.id" @click="$router.push(`/contest/${item.id}`)" style="cursor: pointer;">
+                <td>{{item.name}}</td>
                 <td>{{item.start_time}}</td>
                 <td>{{item.week}}</td>
               </tr>
@@ -74,11 +70,9 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="item in $root.submitList" :key="item.id">
+              <tr v-for="item in $root.submitList" :key="item.id" @click="$router.push(`/problem/${item.id}`)" style="cursor: pointer;">
                 <td>[{{item.number}}]</td>
-                <td>
-                  <a :href="item.link" target="_blank">{{item.name}}</a>
-                </td>
+                <td>{{item.name}}</td>
                 <td>{{item.status}}</td>
               </tr>
             </tbody>
@@ -102,11 +96,9 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="item in $root.messageList" :key="item.id">
+              <tr v-for="item in $root.messageList" :key="item.id" style="cursor: pointer;">
                 <td>{{item.addresser}}</td>
-                <td>
-                  <a href="#" target="_blank">{{item.title}}</a>
-                </td>
+                <td>{{item.title}}</td>
                 <td>{{item.time}}</td>
               </tr>
             </tbody>
@@ -129,10 +121,8 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="item in $root.announcementList" :key="item.id">
-                <td>
-                  <a href="#" target="_blank">{{item.title}}</a>
-                </td>
+              <tr v-for="item in $root.announcementList" :key="item.id" style="cursor: pointer;">
+                <td>{{item.title}}</td>
                 <td>{{item.time}}</td>
               </tr>
             </tbody>

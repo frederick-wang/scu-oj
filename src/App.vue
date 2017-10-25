@@ -1,18 +1,13 @@
 <template>
   <div id="app">
-    <Popups></Popups>
     <router-view/>
   </div>
 </template>
 
 <script>
-import Popups from './components/Popups'
 
 export default {
-  name: 'app',
-  components: {
-    'Popups': Popups
-  }
+  name: 'app'
 }
 </script>
 
@@ -64,11 +59,11 @@ body {
 }
 
 .card > .header h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+.card > .header h2,
+.card > .header h3,
+.card > .header h4,
+.card > .header h5,
+.card > .header h6 {
   margin: 0;
   font-weight: lighter;
 }
@@ -97,6 +92,7 @@ h6 {
 .card > .content {
   position: relative;
   width: 100%;
+  height: 100%;
 }
 
 .card-title {

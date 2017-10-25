@@ -1,16 +1,19 @@
 <template>
-  <div id="fullpage" class="index">
-    <div class="section">
-      <EntrySection></EntrySection>
-    </div>
-    <div class="section">
-      <ProblemSection></ProblemSection>
-    </div>
-    <div class="section">
-      <ContestSection></ContestSection>
-    </div>
-    <div class="section">
-      <InformationSection></InformationSection>
+  <div class="index">
+    <Popups></Popups>
+    <div id="fullpage">
+      <div class="section">
+        <EntrySection></EntrySection>
+      </div>
+      <div class="section">
+        <ProblemSection></ProblemSection>
+      </div>
+      <div class="section">
+        <ContestSection></ContestSection>
+      </div>
+      <div class="section">
+        <InformationSection></InformationSection>
+      </div>
     </div>
   </div>
 </template>
@@ -20,6 +23,8 @@
 // import _ from 'lodash'
 import echarts from 'echarts'
 
+import Popups from './index/Popups'
+
 import EntrySection from './index/EntrySection'
 import ProblemSection from './index/ProblemSection'
 import ContestSection from './index/ContestSection'
@@ -28,6 +33,7 @@ import InformationSection from './index/InformationSection'
 export default {
   name: 'Index',
   components: {
+    'Popups': Popups,
     'EntrySection': EntrySection,
     'ProblemSection': ProblemSection,
     'ContestSection': ContestSection,
@@ -125,6 +131,15 @@ export default {
   },
   beforeDestory () {
     window.$.fn.fullpage.destroy('all')
+  },
+  beforeRouteEnter (to, from, next) {
+    next(vm => {
+      vm.$root.currentPage = 1
+    })
+  },
+  beforeRouteLeave (to, from, next) {
+    window.$.fn.fullpage.destroy('all')
+    next()
   }
 }
 </script>

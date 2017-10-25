@@ -29,16 +29,14 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr v-for="item in $root.scuOjContestsInformation.slice(0,4)" :key="item.id">
-                      <td>
-                        <a :href="item.link" target="_blank">{{item.name}}</a>
-                      </td>
+                    <tr v-for="item in $root.scuOjContestsInformation.slice(0,4)" :key="item.id" @click="$router.push(`/contest/${item.id}`)" style="cursor: pointer;">
+                      <td>{{item.name}}</td>
                       <td>{{item.start_time}}</td>
                       <td>{{item.week}}</td>
                     </tr>
                   </tbody>
                 </table>
-                <a href="#" style="display: inline-block; margin-top: 0;" data-am-modal="{target: '#scu-oj-contests-information-popup'}">查看全部 SCU ACM 校内赛通知</a>
+                <a href="javascript:" style="display: inline-block; margin-top: 0;" data-am-modal="{target: '#scu-oj-contests-information-popup'}">查看全部 SCU ACM 校内赛通知</a>
               </div>
             </div>
             <div class="card">
@@ -56,17 +54,15 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr v-for="item in $root.ojContestsInformation.slice(0,3)" :key="item.id">
+                    <tr v-for="item in $root.ojContestsInformation.slice(0,3)" :key="item.id" @click="$root.openLink(item.link)" style="cursor: pointer;">
                       <td class="am-text-middle">{{item.oj}}</td>
-                      <td class="am-text-middle">
-                        <a :href="item.link" target="_blank">{{item.name}}</a>
-                      </td>
+                      <td class="am-text-middle">{{item.name}}</td>
                       <td class="am-text-middle">{{item.start_time}}</td>
                       <td class="am-text-middle">{{item.access}}</td>
                     </tr>
                   </tbody>
                 </table>
-                <a href="#" style="display: inline-block; margin-top: 0;" data-am-modal="{target: '#oj-contests-information-popup'}">查看全部近期比赛汇总</a>
+                <a href="javascript:" style="display: inline-block; margin-top: 0;" data-am-modal="{target: '#oj-contests-information-popup'}">查看全部近期比赛汇总</a>
               </div>
             </div>
           </div>

@@ -31,15 +31,13 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr v-for="item in $root.announcementList.slice(0,3)" :key="item.id">
-                      <td>
-                        <a href="#" target="_blank">{{item.title}}</a>
-                      </td>
+                    <tr v-for="item in $root.announcementList.slice(0,3)" :key="item.id" style="cursor: pointer;">
+                      <td>{{item.title}}</td>
                       <td>{{item.time}}</td>
                     </tr>
                   </tbody>
                 </table>
-                <a href="#" style="display: inline-block; margin-top: 0;" data-am-modal="{target: '#announcement-list-popup'}">查看全部公告</a>
+                <a href="javascript:" style="display: inline-block; margin-top: 0;" data-am-modal="{target: '#announcement-list-popup'}">查看全部公告</a>
               </div>
             </div>
             <div class="card">
@@ -56,16 +54,14 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr v-for="item in $root.messageList.slice(0,3)" :key="item.id">
+                    <tr v-for="item in $root.messageList.slice(0,3)" :key="item.id" style="cursor: pointer;">
                       <td>{{item.addresser}}</td>
-                      <td>
-                        <a href="#" target="_blank">{{item.title}}</a>
-                      </td>
+                      <td>{{item.title}}</td>
                       <td>{{item.time}}</td>
                     </tr>
                   </tbody>
                 </table>
-                <a href="#" style="display: inline-block; margin-top: 1rem;" data-am-modal="{target: '#message-list-popup'}">查看全部私信</a>
+                <a href="javascript:" style="display: inline-block; margin-top: 1rem;" data-am-modal="{target: '#message-list-popup'}">查看全部私信</a>
               </div>
             </div>
             <div class="card">
@@ -148,7 +144,7 @@
                 </div>
                 <div class="am-g">
                   <div class="am-u-sm-12">
-                    <a href="#" style="display: inline-block; margin-top: 1rem;">查看详细统计数据</a>
+                    <a href="javascript:" style="display: inline-block; margin-top: 1rem;">查看详细统计数据</a>
                   </div>
                 </div>
               </div>

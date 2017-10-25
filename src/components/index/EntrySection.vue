@@ -13,9 +13,9 @@
           <div class="options options-problem" v-if="currentOptions === 1">
             <div class="am-g">
               <div v-bind:class="[largeInput ? 'am-u-sm-6' : 'am-u-sm-9']" style="transition: width 0.2s linear;">
-                <div class="item">开始刷题</div>
-                <div class="item">提交新题</div>
-                <div class="item">完整题库</div>
+                <div class="item" @click="clickProblem">开始刷题</div>
+                <div class="item" @click="clickProblem">提交新题</div>
+                <div class="item" @click="$router.push('/problem_list')">完整题库</div>
               </div>
               <div v-bind:class="[largeInput ? 'am-u-sm-6' : 'am-u-sm-3']" style="transition: width 0.2s linear;">
                 <div class="search-problem-wrapper">
@@ -38,8 +38,8 @@
           <div class="options options-contest" v-if="currentOptions === 2">
             <div class="am-g">
               <div v-bind:class="[largeInput ? 'am-u-sm-6' : 'am-u-sm-9']" style="transition: width 0.2s linear;">
-                <div class="item">参加比赛</div>
-                <div class="item">举办比赛</div>
+                <div class="item" @click="clickContest">参加比赛</div>
+                <div class="item" @click="clickContest">举办比赛</div>
               </div>
               <div v-bind:class="[largeInput ? 'am-u-sm-6' : 'am-u-sm-3']" style="transition: width 0.2s linear;">
                 <div class="search-problem-wrapper">
@@ -62,10 +62,10 @@
           <div class="options options-information" v-if="currentOptions === 3">
             <div class="am-g">
               <div class="am-u-sm-9">
-                <div class="item">修改个人资料</div>
-                <div class="item">评测记录</div>
-                <div class="item">刷题统计</div>
-                <div class="item">私信</div>
+                <div class="item" @click="clickInformation">修改个人资料</div>
+                <div class="item" @click="clickInformation">评测记录</div>
+                <div class="item" @click="clickInformation">刷题统计</div>
+                <div class="item" @click="clickInformation">私信</div>
               </div>
               <div class="am-u-sm-3">
                 <div class="item float-right">退出登录状态</div>
