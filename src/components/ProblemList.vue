@@ -44,7 +44,7 @@
         </div>
         <div class="am-g am-g-fixed">
           <div class="am-u-sm-12">
-            <div class="card problems" v-for="n in 20" :key="n">
+            <div class="card problems" v-for="n in 20" :key="n" @click="$router.push('/problem/' + n)" style="cursor: pointer;">
               <div class="content">
                 <div class="information">
                   <span class="number">[{{1000 + n}}]</span>

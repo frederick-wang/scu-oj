@@ -6,12 +6,6 @@
           <div class="item logo" @click="clickLogo">SCU Online Judge</div>
           <div class="search-contest-wrapper" :style="{ width : largeInput ? '50%' : '20%', opacity : largeInput ? '1' : '0.5'}">
             <div class="input-wrapper">
-              <!-- <div class="am-input-group"> -->
-              <!-- <span class="am-input-group-btn">
-                        <button class="am-btn am-btn-default" type="button" style="background-color: transparent;">
-                          <span class="am-icon-search"></span>
-                        </button>
-                      </span> -->
               <input type="text" class="am-form-field" placeholder="在这里搜索比赛" @focus="largeInput = true" @blur="largeInput = false">
               <!-- </div> -->
             </div>
@@ -45,11 +39,11 @@
         </div>
         <div class="am-g am-g-fixed">
           <div class="am-u-sm-12">
-            <div class="card contests" v-for="n in 20" :key="n">
+            <div class="card contests" v-for="n in 10" :key="n" @click="$router.push('/contest/' + (11 - n))" style="cursor: pointer;">
               <div class="content">
                 <div class="information">
-                  <span class="number">[{{1000 + n}}]</span>
-                  <span class="title">SCU ACM 第 {{n}} 次训练赛</span>
+                  <span class="number">[{{1000 + 11 - n}}]</span>
+                  <span class="title">SCU ACM 第 {{11 - n}} 次训练赛</span>
                 </div>
                 <div class="status">
                   <a href="javascript:" class="am-icon-btn am-success am-icon-check" v-if="n <= 5"></a>
@@ -192,6 +186,7 @@ export default {
 .nav-bar-wrapper .nav-bar .logo {
   padding-left: 1rem;
   font-size: 1.8rem;
+  font-weight: normal;
 }
 
 .nav-bar .item {
