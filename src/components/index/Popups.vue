@@ -1,5 +1,5 @@
 <template>
-  <div class="popups">
+  <div class="index-popups">
     <div class="am-popup" id="oj-contests-information-popup">
       <div class="am-popup-inner">
         <div class="am-popup-hd">

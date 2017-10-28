@@ -44,14 +44,14 @@
         </div>
         <div class="am-g am-g-fixed">
           <div class="am-u-sm-12">
-            <div class="card problems" v-for="n in 20" :key="n" @click="$router.push('/problem/' + n)" style="cursor: pointer;">
+            <div class="card problems" v-for="item in $root.database" :key="item.id" @click="$router.push('/problem/' + item.id)" style="cursor: pointer;">
               <div class="content">
                 <div class="information">
-                  <span class="number">[{{1000 + n}}]</span>
-                  <span class="title">健康的荷斯坦奶牛 Healthy Holsteins</span>
+                  <span class="number">[{{item.number}}]</span>
+                  <span class="title">{{item.title}}</span>
                 </div>
                 <div class="status">
-                  <a href="javascript:" class="am-icon-btn am-success am-icon-check" v-if="n <= 5"></a>
+                  <a href="javascript:" class="am-icon-btn am-success am-icon-check" v-if="item.id <= 5"></a>
                 </div>
               </div>
             </div>

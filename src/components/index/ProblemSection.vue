@@ -5,7 +5,7 @@
       <div class="nav-bar-wrapper" v-if="$root.currentPage === 2">
         <div class="nav-bar">
           <div class="item logo" @click="clickLogo">SCU Online Judge</div>
-          <div class="item">开始刷题</div>
+          <div class="item" @click="$router.push('/problem_list')">开始刷题</div>
           <div class="item">提交新题</div>
           <div class="item" @click="$router.push('/problem_list')">完整题库</div>
           <div class="item logout float-right">退出登录状态</div>

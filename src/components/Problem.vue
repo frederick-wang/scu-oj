@@ -1,5 +1,6 @@
 <template>
   <div class="problem">
+    <Popups></Popups>
     <transition name="fade">
       <div class="nav-bar-wrapper">
         <div class="nav-bar">
@@ -17,7 +18,7 @@
             <div class="card problem-header">
               <div class="content">
                 <div class="problem-information">
-                  <h1 class="title">[1036] 选数</h1>
+                  <h1 class="title">[{{$root.database[$route.params.id - 1].number}}] {{$root.database[$route.params.id - 1].title}}</h1>
                   <div class="source gray">
                     <span>题目来源：洛谷OnlineJudge</span>
                     <span style="margin-left: 1rem;">难度：入门</span>
@@ -30,7 +31,7 @@
                   <a href="javascript:" class="item am-icon-btn am-warning am-icon-hand-paper-o" id="button-feedback"></a>
                   <a href="javascript:" class="item am-icon-btn am-secondary am-icon-bar-chart" id="button-status"></a>
                   <a href="javascript:" class="item am-icon-btn am-primary am-icon-comments-o" id="button-discuss"></a>
-                  <a href="javascript:" class="item am-icon-btn am-success am-icon-paper-plane-o" id="button-submit"></a>
+                  <a href="javascript:" class="item am-icon-btn am-success am-icon-paper-plane-o" id="button-submit" data-am-modal="{target: '#problem-submit-popup'}"></a>
                 </div>
               </div>
             </div>
@@ -43,13 +44,7 @@
                 <h2>题目描述</h2>
               </div>
               <div class="content">
-                <p>已知 n 个整数 x1,x2,…,xn，以及一个整数 k（k＜n）。从 n 个整数中任选 k 个整数相加，可分别得到一系列的和。例如当 n=4，k＝3，4 个整数分别为 3，7，12，19 时，可得全部的组合与它们的和为：</p>
-                <p>3＋7＋12=22</p>
-                <p>3＋7＋19＝29</p>
-                <p>7＋12＋19＝38</p>
-                <p>3＋12＋19＝34。</p>
-                <p>现在，要求你计算出和为素数共有多少种。</p>
-                <p>例如上例，只有一种的和为素数：3＋7＋19＝29）。</p>
+                <div v-html="$root.database[$route.params.id - 1].content.split('\n').map(value=>'<p>'+value+'</p>').join('\n')"></div>
               </div>
             </div>
             <div class="card">
@@ -58,12 +53,9 @@
               </div>
               <div class="content">
                 <h3>输入格式：</h3>
-                <p>键盘输入，格式为：</p>
-                <p>n , k （1&lt;=n&lt;=20，k＜n）</p>
-                <p>x1,x2，…,xn （1&lt;=xi&lt;=5000000）</p>
+                <div v-html="$root.database[$route.params.id - 1].input.split('\n').map(value=>'<p>'+value+'</p>').join('\n')"></div>
                 <h3>输出格式：</h3>
-                <p>屏幕输出，格式为：</p>
-                <p>一个整数（满足条件的种数）。</p>
+                <div v-html="$root.database[$route.params.id - 1].output.split('\n').map(value=>'<p>'+value+'</p>').join('\n')"></div>
               </div>
             </div>
             <div class="card">
@@ -74,11 +66,11 @@
                 <div class="am-g">
                   <div class="am-u-sm-6">
                     <h3>输入样例 #1</h3>
-                    <pre>{{'4 3\n3 7 12 19'}}</pre>
+                    <pre>{{$root.database[$route.params.id - 1].inputSample}}</pre>
                   </div>
                   <div class="am-u-sm-6">
                     <h3>输出样例 #1</h3>
-                    <pre>1</pre>
+                    <pre>{{$root.database[$route.params.id - 1].outputSample}}</pre>
                   </div>
                 </div>
               </div>
@@ -174,8 +166,13 @@
 </template>
 
 <script>
+import Popups from './problem/Popups'
+
 export default {
   name: 'Problem',
+  components: {
+    'Popups': Popups
+  },
   data () {
     return {
 
@@ -187,6 +184,7 @@ export default {
     }
   },
   mounted () {
+    document.documentElement.scrollTop = 0
     let $ = window.$
     $(function () {
       $('#button-submit').popover({
