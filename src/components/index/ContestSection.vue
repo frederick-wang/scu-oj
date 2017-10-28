@@ -82,7 +82,7 @@
                       总题数
                     </div>
                     <div class="am-u-sm-6 am-text-center">
-                      20
+                      10
                     </div>
                   </div>
                   <div class="am-g">
@@ -90,7 +90,7 @@
                       您已完成
                     </div>
                     <div class="am-u-sm-6 am-text-center">
-                      16
+                      6
                     </div>
                   </div>
                   <div class="am-g">
@@ -126,7 +126,7 @@
                     </div>
                   </div>
                   <br/>
-                  <button class="am-btn am-btn-default am-btn-block">
+                  <button class="am-btn am-btn-default am-btn-block" @click="$router.push('/contest/7')">
                     <i class="am-icon-check"></i>
                     继续刚比赛
                   </button>

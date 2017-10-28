@@ -53,7 +53,6 @@ export default {
     let editor = window.ace.edit('problem-submit-editor')
     editor.setTheme('ace/theme/eclipse')
     editor.getSession().setMode('ace/mode/c_cpp')
-    editor.setValue("the new text here")
     window.$('#select-language-dropdown').dropdown({
       boundary: '#problem-submit-popup'
     })

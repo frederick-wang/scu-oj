@@ -26,11 +26,11 @@
                   </div>
                 </div>
                 <div class="buttons">
-                  <a href="javascript:" class="item am-icon-btn am-icon-search" id="button-web-search"></a>
+                  <a href="javascript:" class="item am-icon-btn am-icon-search" id="button-web-search" @click="$root.openLink('https://www.baidu.com/s?wd=' + $root.database[$route.params.id - 1].title)"></a>
                   <a href="javascript:" class="item am-icon-btn am-danger am-icon-map-o" id="button-answer"></a>
                   <a href="javascript:" class="item am-icon-btn am-warning am-icon-hand-paper-o" id="button-feedback"></a>
                   <a href="javascript:" class="item am-icon-btn am-secondary am-icon-bar-chart" id="button-status"></a>
-                  <a href="javascript:" class="item am-icon-btn am-primary am-icon-comments-o" id="button-discuss"></a>
+                  <a href="javascript:" class="item am-icon-btn am-primary am-icon-comments-o" id="button-discuss" @click="onDiscussClick"></a>
                   <a href="javascript:" class="item am-icon-btn am-success am-icon-paper-plane-o" id="button-submit" data-am-modal="{target: '#problem-submit-popup'}"></a>
                 </div>
               </div>
@@ -181,6 +181,10 @@ export default {
   methods: {
     clickLogo () {
       this.$router.push('/')
+    },
+    onDiscussClick () {
+      window.$('#button-discuss').popover('close')
+      this.$router.push('/discuss/p' + this.$route.params.id)
     }
   },
   mounted () {

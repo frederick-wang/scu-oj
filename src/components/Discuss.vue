@@ -1,10 +1,11 @@
 <template>
   <div class="discuss">
+    <Popups></Popups>
     <transition name="fade">
       <div class="nav-bar-wrapper">
         <div class="nav-bar">
           <div class="item logo" @click="clickLogo">SCU Online Judge</div>
-          <div class="item" @click="$router.push('/discuss_list')">返回完整题库</div>
+          <div class="item" @click="$router.push(`/${type === 'problem' ? 'problem' : 'contest'}/${id}`)">返回{{type === 'problem' ? '题目' : '比赛'}}</div>
           <div class="item logout float-right">退出登录状态</div>
           <div class="item logout float-right" @click="clickLogo">王兆基</div>
         </div>
@@ -17,153 +18,128 @@
             <div class="card discuss-header">
               <div class="content">
                 <div class="discuss-information">
-                  <h1 class="title">[1036] 选数</h1>
+                  <h1 class="title">[讨论区] {{title}}</h1>
                   <div class="source gray">
-                    <span>题目来源：洛谷OnlineJudge</span>
-                    <span style="margin-left: 1rem;">难度：入门</span>
-                    <span style="margin-left: 1rem;">时空限制：1s/128M</span>
+                    <span>共有 12 条主题</span>
+                    <span style="margin-left: 1rem;"> 36 条评论</span>
+                    <span style="margin-left: 1rem;"> 6 位用户在此发言</span>
                   </div>
                 </div>
                 <div class="buttons">
-                  <a href="javascript:" class="item am-icon-btn am-icon-search" id="button-web-search"></a>
-                  <a href="javascript:" class="item am-icon-btn am-danger am-icon-map-o" id="button-answer"></a>
-                  <a href="javascript:" class="item am-icon-btn am-warning am-icon-hand-paper-o" id="button-feedback"></a>
-                  <a href="javascript:" class="item am-icon-btn am-secondary am-icon-bar-chart" id="button-status"></a>
-                  <a href="javascript:" class="item am-icon-btn am-primary am-icon-comments-o" id="button-discuss"></a>
-                  <a href="javascript:" class="item am-icon-btn am-success am-icon-paper-plane-o" id="button-submit"></a>
+                  <a href="javascript:" class="item am-icon-btn am-success am-icon-paper-plane-o" id="button-submit" data-am-modal="{target: '#discuss-submit-popup'}"></a>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div class="am-g am-g-fixed">
-          <div class="am-u-sm-8" style="padding-right: 0;">
+          <div class="am-u-sm-12">
             <div class="card">
-              <div class="header">
-                <h2>题目描述</h2>
-              </div>
               <div class="content">
-                <p>已知 n 个整数 x1,x2,…,xn，以及一个整数 k（k＜n）。从 n 个整数中任选 k 个整数相加，可分别得到一系列的和。例如当 n=4，k＝3，4 个整数分别为 3，7，12，19 时，可得全部的组合与它们的和为：</p>
-                <p>3＋7＋12=22</p>
-                <p>3＋7＋19＝29</p>
-                <p>7＋12＋19＝38</p>
-                <p>3＋12＋19＝34。</p>
-                <p>现在，要求你计算出和为素数共有多少种。</p>
-                <p>例如上例，只有一种的和为素数：3＋7＋19＝29）。</p>
-              </div>
-            </div>
-            <div class="card">
-              <div class="header">
-                <h2>输入输出格式</h2>
-              </div>
-              <div class="content">
-                <h3>输入格式：</h3>
-                <p>键盘输入，格式为：</p>
-                <p>n , k （1&lt;=n&lt;=20，k＜n）</p>
-                <p>x1,x2，…,xn （1&lt;=xi&lt;=5000000）</p>
-                <h3>输出格式：</h3>
-                <p>屏幕输出，格式为：</p>
-                <p>一个整数（满足条件的种数）。</p>
-              </div>
-            </div>
-            <div class="card">
-              <div class="header">
-                <h2>输入输出样例</h2>
-              </div>
-              <div class="content">
-                <div class="am-g">
-                  <div class="am-u-sm-6">
-                    <h3>输入样例 #1</h3>
-                    <pre>{{'4 3\n3 7 12 19'}}</pre>
-                  </div>
-                  <div class="am-u-sm-6">
-                    <h3>输出样例 #1</h3>
-                    <pre>1</pre>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="am-u-sm-4" style="padding-left: 0;">
-            <div class="card">
-              <div class="header">
-                <h2>当前状态</h2>
-              </div>
-              <div class="content">
-                <div class="status">
-                  <div class="am-g">
-                    <div class="highlight am-u-sm-6">
-                      总提交数
-                    </div>
-                    <div class="am-u-sm-6 am-text-center">
-                      20
-                    </div>
-                  </div>
-                  <div class="am-g">
-                    <div class="highlight am-u-sm-6">
-                      通过数
-                    </div>
-                    <div class="am-u-sm-6 am-text-center">
-                      0
-                    </div>
-                  </div>
-                  <div class="am-g">
-                    <div class="highlight am-u-sm-6">
-                      通过率
-                    </div>
-                    <div class="am-u-sm-6 am-text-center">
-                      0%
-                    </div>
-                  </div>
-                  <div class="am-g">
-                    <div class="highlight am-u-sm-6">
-                      已耗时
-                    </div>
-                    <div class="am-u-sm-6 am-text-center">
-                      45 分
-                    </div>
-                  </div>
-                  <div class="am-g">
-                    <div class="highlight am-u-sm-6">
-                      题目状态
-                    </div>
-                    <div class="am-u-sm-6 am-text-center">
-                      Failed
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="header">
-                <h2>最新讨论</h2>
-              </div>
-              <div class="content">
-                <div class="discuss-item" v-for="n in 4" :key="n">
-                  <div class="am-g">
-                    <div class="am-u-sm-4">
-                      <a href="javascript:" class="user">
-                        <div class="avatar">
-                          <img src="../assets/bilibili.png" class="am-img-responsive am-circle am-img-thumbnail" alt="讨论用户头像">
+                <ul class="am-comments-list am-comments-list-flip">
+                  <li class="am-comment">
+                    <a href="javascript:">
+                      <img src="../assets/bilibili.png" alt="" class="am-comment-avatar" width="48" height="48" />
+                    </a>
+                    <div class="am-comment-main">
+                      <header class="am-comment-hd">
+                        <div class="am-comment-meta">
+                          <a href="javascript:" class="am-comment-author">王兆基</a>
+                          评论于
+                          <time datetime="2017-10-12T04:54:29-07:00" title="2017年10月12日 下午2:30 格林尼治标准时间+0800">2017-10-12 14:30</time>
                         </div>
-                        <div class="name">
-                          王兆基
+                      </header>
+                      <div class="am-comment-bd">
+                        我在年青时候也曾经做过许多梦，后来大半忘却了，但自己也并不以为可惜。所谓回忆者，虽说可以使人欢欣，有时也不免使人寂寞，使精神的丝缕还牵着已逝的寂寞的时光，又有什么意味呢，而我偏苦于不能全忘却，这不能全忘的一部分，到现在便成了《呐喊》的来由。
+                      </div>
+                    </div>
+                  </li>
+                  <li class="am-comment am-comment-flip am-comment-highlight">
+                    <a href="javascript:">
+                      <img src="../assets/bilibili.png" alt="" class="am-comment-avatar" width="48" height="48" />
+                    </a>
+                    <div class="am-comment-main">
+                      <header class="am-comment-hd">
+                        <div class="am-comment-meta">
+                          <a href="javascript:" class="am-comment-author">朱嘉宁</a>
+                          评论于
+                          <time datetime="2017-10-12T04:54:29-07:00" title="2017年10月12日 下午3:30 格林尼治标准时间+0800">2017-10-12 15:30</time>
                         </div>
-                      </a>
-                    </div>
-                    <div class="am-u-sm-8 right" style="padding-left: 0;">
-                      <div class="title am-text-truncate">
-                        <a href="javascript:">这道题的数据范围怎么这么大，感觉很难过</a>
-                      </div>
-                      <div class="abstract am-text-truncate">
-                        <a href="javascript:">那时候刚好下着雨，柏油路面湿冷冷的，还闪烁着青、黄、红颜色的灯火。我们就在骑楼下躲雨，看绿色的邮筒孤独地站在街的对面。</a>
-                      </div>
-                      <div class="submit-time gray">
-                        @2017-10-21 16:49:04
+                      </header>
+                      <div class="am-comment-bd">
+                        我有四年多，曾经常常，——几乎是每天，出入于质铺和药店里，年纪可是忘却了，总之是药店的柜台正和我一样高，质铺的是比我高一倍，我从一倍高的柜台外送上衣服或首饰去，在侮蔑里接了钱，再到一样高的柜台上给我久病的父亲去买药。回家之后，又须忙别的事了，因为开方的医生是最有名的，以此所用的药引也奇特：冬天的芦根，经霜三年的甘蔗，蟋蟀要原对的，结子的平地木，……多不是容易办到的东西。然而我的父亲终于日重一日的亡故了。
                       </div>
                     </div>
-                  </div>
-                </div>
+                  </li>
+                  <li class="am-comment am-comment-success">
+                    <a href="javascript:">
+                      <img src="../assets/bilibili.png" alt="" class="am-comment-avatar" width="48" height="48" />
+                    </a>
+                    <div class="am-comment-main">
+                      <header class="am-comment-hd">
+                        <div class="am-comment-meta">
+                          <a href="javascript:" class="am-comment-author">薛泓睿</a>
+                          评论于
+                          <time datetime="2017-10-12T04:54:29-07:00" title="2017年10月12日 下午2:30 格林尼治标准时间+0800">2017-10-12 14:30</time>
+                        </div>
+                      </header>
+                      <div class="am-comment-bd">
+                        有谁从小康人家而坠入困顿的么，我以为在这途路中，大概可以看见世人的真面目；我要到N进K学堂去了，仿佛是想走异路，逃异地，去寻求别样的人们。我的母亲没有法，办了八元的川资，说是由我的自便；然而伊哭了，这正是情理中的事，因为那时读书应试是正路，所谓学洋务，社会上便以为是一种走投无路的人，只得将灵魂卖给鬼子，要加倍的奚落而且排斥的，而况伊又看不见自己的儿子了。然而我也顾不得这些事，终于到N去进了K学堂了，在这学堂里，我才知道世上还有所谓格致，算学，地理，历史，绘图和体操。生理学并不教，但我们却看到些木版的《全体新论》和《化学卫生论》之类了。我还记得先前的医生的议论和方药，和现在所知道的比较起来，便渐渐的悟得中医不过是一种有意的或无意的骗子，同时又很起了对于被骗的病人和他的家族的同情；而且从译出的历史上，又知道了日本维新是大半发端于西方医学的事实。
+                      </div>
+                    </div>
+                  </li>
+                  <li class="am-comment am-comment-flip am-comment-warning">
+                    <a href="javascript:">
+                      <img src="../assets/bilibili.png" alt="" class="am-comment-avatar" width="48" height="48" />
+                    </a>
+                    <div class="am-comment-main">
+                      <header class="am-comment-hd">
+                        <div class="am-comment-meta">
+                          <a href="javascript:" class="am-comment-author">时佳音</a>
+                          评论于
+                          <time datetime="2017-10-12T04:54:29-07:00" title="2017年10月12日 下午3:30 格林尼治标准时间+0800">2017-10-12 15:30</time>
+                        </div>
+                      </header>
+                      <div class="am-comment-bd">
+                        因为这些幼稚的知识，后来便使我的学籍列在日本一个乡间的医学专门学校里了。我的梦很美满，预备卒业回来，救治像我父亲似的被误的病人的疾苦，战争时候便去当军医，一面又促进了国人对于维新的信仰。我已不知道教授微生物学的方法，现在又有了怎样的进步了，总之那时是用了电影，来显示微生物的形状的，因此有时讲义的一段落已完，而时间还没有到，教师便映些风景或时事的画片给学生看，以用去这多馀的光阴。其时正当日俄战争的时候，关于战事的画片自然也就比较的多了，我在这一个讲堂中，便须常常随喜我那同学们的拍手和喝采。有一回，我竟在画片上忽然会见我久违的许多中国人了，一个绑在中间，许多站在左右，一样是强壮的体格，而显出麻木的神情。据解说，则绑着的是替俄国做了军事上的侦探，正要被日军砍下头颅来示众，而围着的便是来赏鉴这示众的盛举的人们。
+                      </div>
+                    </div>
+                  </li>
+                  <li class="am-comment am-comment-danger">
+                    <a href="javascript:">
+                      <img src="../assets/bilibili.png" alt="" class="am-comment-avatar" width="48" height="48" />
+                    </a>
+                    <div class="am-comment-main">
+                      <header class="am-comment-hd">
+                        <div class="am-comment-meta">
+                          <a href="javascript:" class="am-comment-author">韩冰冰</a>
+                          评论于
+                          <time datetime="2017-10-12T04:54:29-07:00" title="2017年10月12日 下午2:30 格林尼治标准时间+0800">2017-10-12 14:30</time>
+                        </div>
+                      </header>
+                      <div class="am-comment-bd">
+                        这一学年没有完毕，我已经到了东京了，因为从那一回以后，我便觉得医学并非一件紧要事，凡是愚弱的国民，即使体格如何健全，如何茁壮，也只能做毫无意义的示众的材料和看客，病死多少是不必以为不幸的。所以我们的第一要著，是在改变他们的精神，而善于改变精神的是，我那时以为当然要推文艺，于是想提倡文艺运动了。在东京的留学生很有学法政理化以至警察工业的，但没有人治文学和美术；可是在冷淡的空气中，也幸而寻到几个同志了，此外又邀集了必须的几个人，商量之后，第一步当然是出杂志，名目是取“新的生命”的意思，因为我们那时大抵带些复古的倾向，所以只谓之《新生》。
+                      </div>
+                    </div>
+                  </li>
+                  <li class="am-comment am-comment-flip am-comment-primary">
+                    <a href="javascript:">
+                      <img src="../assets/bilibili.png" alt="" class="am-comment-avatar" width="48" height="48" />
+                    </a>
+                    <div class="am-comment-main">
+                      <header class="am-comment-hd">
+                        <div class="am-comment-meta">
+                          <a href="javascript:" class="am-comment-author">马瑞鑫</a>
+                          评论于
+                          <time datetime="2017-10-12T04:54:29-07:00" title="2017年10月12日 下午3:30 格林尼治标准时间+0800">2017-10-12 15:30</time>
+                        </div>
+                      </header>
+                      <div class="am-comment-bd">
+                        《新生》的出版之期接近了，但最先就隐去了若干担当文字的人，接着又逃走了资本，结果只剩下不名一钱的三个人。创始时候既已背时，失败时候当然无可告语，而其后却连这三个人也都为各自的运命所驱策，不能在一处纵谈将来的好梦了，这就是我们的并未产生的《新生》的结局。
+                      </div>
+                    </div>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -174,11 +150,41 @@
 </template>
 
 <script>
+import Popups from './discuss/Popups'
+
 export default {
   name: 'Discuss',
+  components: {
+    'Popups': Popups
+  },
   data () {
     return {
 
+    }
+  },
+  computed: {
+    type () {
+      switch (this.$route.params.id.slice(0, 1)) {
+        case 'p':
+          return 'problem'
+        case 'c':
+          return 'contest'
+        default:
+          this.$router.replace('/')
+          return 'error'
+      }
+    },
+    id () {
+      return parseInt(this.$route.params.id.slice(1, this.$route.params.id.length))
+    },
+    title () {
+      let tmp = ''
+      if (this.type === 'problem') {
+        tmp = this.$root.database[this.id - 1].title
+      } else if (this.type === 'contest') {
+        tmp = 'SCU ACM 训练赛'
+      }
+      return tmp
     }
   },
   methods: {
@@ -190,44 +196,9 @@ export default {
     let $ = window.$
     $(function () {
       $('#button-submit').popover({
-        content: '提交您的答案',
+        content: '发表新主题',
         trigger: 'hover focus',
         theme: 'success sm'
-      })
-    })
-    $(function () {
-      $('#button-discuss').popover({
-        content: '参与本题的讨论',
-        trigger: 'hover focus',
-        theme: 'primary sm'
-      })
-    })
-    $(function () {
-      $('#button-status').popover({
-        content: '查看提交记录',
-        trigger: 'hover focus',
-        theme: 'secondary sm'
-      })
-    })
-    $(function () {
-      $('#button-feedback').popover({
-        content: '题目有问题？点击这里报错',
-        trigger: 'hover focus',
-        theme: 'warning sm'
-      })
-    })
-    $(function () {
-      $('#button-answer').popover({
-        content: '真的不会做了吗？确定要查看题解吗？',
-        trigger: 'hover focus',
-        theme: 'danger sm'
-      })
-    })
-    $(function () {
-      $('#button-web-search').popover({
-        content: '在百度上搜索该题',
-        trigger: 'hover focus',
-        theme: 'sm'
       })
     })
   }

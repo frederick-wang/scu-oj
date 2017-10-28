@@ -31,10 +31,10 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr v-for="item in $root.submitList.slice(0,4)" :key="item.id" @click="$router.push(`/problem/${item.id}`)" style="cursor: pointer;">
+                    <tr v-for="item in $root.database.slice(10,14)" :key="item.id" @click="$router.push(`/problem/${item.id}`)" style="cursor: pointer;">
                       <td>[{{item.number}}]</td>
-                      <td>{{item.name}}</td>
-                      <td>{{item.status}}</td>
+                      <td>{{item.title}}</td>
+                      <td>Accepted</td>
                     </tr>
                   </tbody>
                 </table>
@@ -66,7 +66,7 @@
                         <a href="javascript:">那时候刚好下着雨，柏油路面湿冷冷的，还闪烁着青、黄、红颜色的灯火。我们就在骑楼下躲雨，看绿色的邮筒孤独地站在街的对面。</a>
                       </div>
                       <div class="submit-time gray">in
-                        <a href="javascript:">[2312] 最短路计数</a>&nbsp;&nbsp;@2017-10-21 16:49:04</div>
+                        <a href="javascript:">[1001] 小车问题</a>&nbsp;&nbsp;@2017-10-21 16:49:04</div>
                     </div>
                     <div class="am-u-sm-3 right">
                       <div class="reply-number">128 个回复</div>
@@ -97,7 +97,7 @@
                         <a href="javascript:">我白色风衣的大口袋里有一封要寄给南部的母亲的信。樱子说她可以撑伞过去帮我寄信。我默默点头。</a>
                       </div>
                       <div class="submit-time gray">in
-                        <a href="javascript:">[1453] 传染病控制 </a>&nbsp;&nbsp;@2017-10-21 16:49:04</div>
+                        <a href="javascript:">[1001] 小车问题 </a>&nbsp;&nbsp;@2017-10-21 16:49:04</div>
                     </div>
                     <div class="am-u-sm-3 right">
                       <div class="reply-number">23 个回复</div>
@@ -108,7 +108,7 @@
                     </div>
                   </div>
                 </div>
-                <a href="javascript:" style="display: inline-block; margin-top: 1rem;" data-am-modal="{target: '#submit-list-popup'}">查看全部近期讨论记录</a>
+                <a href="javascript:" style="display: inline-block; margin-top: 1rem;" @click="$router.push('/discuss/p1')">查看全部近期讨论记录</a>
               </div>
             </div>
           </div>
@@ -116,7 +116,7 @@
             <div class="card current-problem">
               <div class="header">
                 <div class="title">正在练习</div>
-                <div class="subtitle">[2312] 最短路计数</div>
+                <div class="subtitle">[1001] 小车问题</div>
               </div>
               <div class="content">
                 <div class="image">
@@ -164,7 +164,7 @@
                     </div>
                   </div>
                   <br/>
-                  <button class="am-btn am-btn-default am-btn-block">
+                  <button class="am-btn am-btn-default am-btn-block" @click="$router.push('/problem/1')">
                     <i class="am-icon-check"></i>
                     继续刚题
                   </button>

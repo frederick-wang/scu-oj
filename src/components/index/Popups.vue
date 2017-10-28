@@ -70,10 +70,10 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="item in $root.submitList" :key="item.id" @click="$router.push(`/problem/${item.id}`)" style="cursor: pointer;">
+              <tr v-for="item in $root.database" :key="item.id" @click="$router.push(`/problem/${item.id}`)" style="cursor: pointer;">
                 <td>[{{item.number}}]</td>
-                <td>{{item.name}}</td>
-                <td>{{item.status}}</td>
+                <td>{{item.title}}</td>
+                <td>Accepted</td>
               </tr>
             </tbody>
           </table>

@@ -45,20 +45,20 @@
                 <h2>题目列表</h2>
               </div>
               <div class="content">
-                <table class="am-table am-table-striped am-table-hover am-table-centered">
+                <table class="am-table am-table-striped am-table-hover">
                   <thead>
                     <tr>
-                      <th>题号</th>
+                      <th class="am-text-center">题号</th>
                       <th>题目</th>
-                      <th>我的状态</th>
+                      <th class="am-text-center">我的状态</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr v-for="n in 10" :key="n" style="cursor: pointer;">
-                      <td>{{n}}</td>
-                      <td>A + B Problem</td>
-                      <td>{{n
-                        < 7 ? 'Accepted' : 'Failed'}}</td>
+                    <tr v-for="(item,index) in $root.database.slice(0,10)" :key="item.id" style="cursor: pointer;" @click="$router.push('/problem/' + item.id)">
+                      <td class="am-text-center">{{index + 1}}</td>
+                      <td>[{{item.number}}] {{item.title}}</td>
+                      <td class="am-text-center">{{index
+                        < 6 ? 'Accepted' : 'Failed'}}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -131,7 +131,7 @@
                     </div>
                   </div>
                 </div>
-                <a href="javascript:" style="display: inline-block; margin-top: 1rem;" data-am-modal="{target: '#submit-list-popup'}">查看全部讨论区内容</a>
+                <a href="javascript:" style="display: inline-block; margin-top: 1rem;" @click="$router.push('/discuss/c' + $route.params.id)">查看全部讨论区内容</a>
               </div>
             </div>
           </div>
