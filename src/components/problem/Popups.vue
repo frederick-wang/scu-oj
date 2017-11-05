@@ -24,7 +24,7 @@
                 <a href="javascript:" @click="onLanguageSelected('Java')">Java</a>
               </li>
               <li :class="{'am-active' : currentLanguage === 'Pascal'}">
-                <a href="javascript:" @click="onLanguageSelected('Pascal')">C</a>
+                <a href="javascript:" @click="onLanguageSelected('Pascal')">Pascal</a>
               </li>
             </ul>
           </div>
