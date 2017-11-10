@@ -32,7 +32,7 @@
                   </thead>
                   <tbody>
                     <tr v-for="item in $root.announcementList.slice(0,3)" :key="item.id" style="cursor: pointer;">
-                      <td>{{item.title}}</td>
+                      <td style="font-weight: normal;">{{item.title}}</td>
                       <td>{{item.time}}</td>
                     </tr>
                   </tbody>
@@ -48,15 +48,15 @@
                 <table class="am-table am-table-hover am-table-compact">
                   <thead>
                     <tr>
-                      <th>发件人</th>
                       <th>标题</th>
+                      <th>发件人</th>
                       <th>时间</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr v-for="item in $root.messageList.slice(0,3)" :key="item.id" style="cursor: pointer;">
+                      <td style="font-weight: normal;">{{item.title}}</td>
                       <td>{{item.addresser}}</td>
-                      <td>{{item.title}}</td>
                       <td>{{item.time}}</td>
                     </tr>
                   </tbody>
@@ -81,38 +81,26 @@
                 <h2>个人资料</h2>
               </div>
               <div class="content">
-                <div class="am-g">
-                  <div class="highlight am-u-sm-6">
-                    用户名：
-                  </div>
-                  <div class="am-u-sm-6">
-                    王兆基
-                  </div>
-                </div>
-                <div class="am-g">
-                  <div class="highlight am-u-sm-6">
-                    学院：
-                  </div>
-                  <div class="am-u-sm-6">
-                    计算机学院
-                  </div>
-                </div>
-                <div class="am-g">
-                  <div class="highlight am-u-sm-6">
-                    Email：
-                  </div>
-                  <div class="am-u-sm-6">
-                    hwoam@outlook.com
-                  </div>
-                </div>
-                <div class="am-g">
-                  <div class="highlight am-u-sm-6">
-                    QQ：
-                  </div>
-                  <div class="am-u-sm-6">
-                    1095875055
-                  </div>
-                </div>
+                <table style="width: 100%;">
+                  <tbody>
+                    <tr>
+                      <td style="font-weight: normal;">用户名：</td>
+                      <td>王兆基</td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight: normal;">学院：</td>
+                      <td>计算机学院</td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight: normal;">Email：</td>
+                      <td>hwoam@outlook.com</td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight: normal;">QQ：</td>
+                      <td>1095875055</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
             <div class="card statistics">
@@ -126,22 +114,22 @@
                     </div>
                   </div>
                 </div>
-                <div class="am-g">
-                  <div class="highlight am-u-sm-6">
-                    总通过量：
-                  </div>
-                  <div class="am-u-sm-6">
-                    692
-                  </div>
-                </div>
-                <div class="am-g">
-                  <div class="highlight am-u-sm-6">
-                    总提交量：
-                  </div>
-                  <div class="am-u-sm-6">
-                    973
-                  </div>
-                </div>
+                <table style="width: 100%;">
+                  <tbody>
+                    <tr>
+                      <td style="font-weight: normal;">总通过量：</td>
+                      <td>692</td>
+                      <td style="font-weight: normal;">总提交量：</td>
+                      <td>973</td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight: normal;">全站排名：</td>
+                      <td>36</td>
+                      <td style="font-weight: normal;">获得称号：</td>
+                      <td>学富五车</td>
+                    </tr>
+                  </tbody>
+                </table>
                 <div class="am-g">
                   <div class="am-u-sm-12">
                     <a href="javascript:" style="display: inline-block; margin-top: 1rem;">查看详细统计数据</a>
@@ -211,6 +199,7 @@ export default {
 .nav-bar-wrapper .nav-bar .logo {
   padding-left: 1rem;
   font-size: 1.8rem;
+  font-weight: normal;
 }
 
 .nav-bar .item {

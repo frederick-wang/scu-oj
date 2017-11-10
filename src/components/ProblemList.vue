@@ -184,6 +184,7 @@ export default {
 .nav-bar-wrapper .nav-bar .logo {
   padding-left: 1rem;
   font-size: 1.8rem;
+  font-weight: normal;
 }
 
 .nav-bar .item {

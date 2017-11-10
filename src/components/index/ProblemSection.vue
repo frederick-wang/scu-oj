@@ -123,46 +123,30 @@
                   <img src="../../assets/icpc_logo.png" class="am-img-responsive" alt="" />
                 </div>
                 <div class="status">
-                  <div class="am-g">
-                    <div class="highlight am-u-sm-6">
-                      总提交数
-                    </div>
-                    <div class="am-u-sm-6 am-text-center">
-                      20
-                    </div>
-                  </div>
-                  <div class="am-g">
-                    <div class="highlight am-u-sm-6">
-                      通过数
-                    </div>
-                    <div class="am-u-sm-6 am-text-center">
-                      0
-                    </div>
-                  </div>
-                  <div class="am-g">
-                    <div class="highlight am-u-sm-6">
-                      通过率
-                    </div>
-                    <div class="am-u-sm-6 am-text-center">
-                      0%
-                    </div>
-                  </div>
-                  <div class="am-g">
-                    <div class="highlight am-u-sm-6">
-                      已耗时
-                    </div>
-                    <div class="am-u-sm-6 am-text-center">
-                      45 分
-                    </div>
-                  </div>
-                  <div class="am-g">
-                    <div class="highlight am-u-sm-6">
-                      题目状态
-                    </div>
-                    <div class="am-u-sm-6 am-text-center">
-                      Failed
-                    </div>
-                  </div>
+                  <table style="width: 100%; border-collapse: separate; border-spacing: 0 0.5rem;">
+                    <tbody>
+                      <tr>
+                        <td style="font-weight: normal;">总提交数</td>
+                        <td align="right">20</td>
+                      </tr>
+                      <tr>
+                        <td style="font-weight: normal;">通过数</td>
+                        <td align="right">0</td>
+                      </tr>
+                      <tr>
+                        <td style="font-weight: normal;">通过率</td>
+                        <td align="right">0 %</td>
+                      </tr>
+                      <tr>
+                        <td style="font-weight: normal;">已耗时 </td>
+                        <td align="right">18 分</td>
+                      </tr>
+                      <tr>
+                        <td style="font-weight: normal;">题目状态</td>
+                        <td align="right">Failed</td>
+                      </tr>
+                    </tbody>
+                  </table>
                   <br/>
                   <button class="am-btn am-btn-default am-btn-block" @click="$router.push('/problem/1')">
                     <i class="am-icon-check"></i>
@@ -314,6 +298,7 @@ export default {
 .nav-bar-wrapper .nav-bar .logo {
   padding-left: 1rem;
   font-size: 1.8rem;
+  font-weight: normal;
 }
 
 .nav-bar .item {

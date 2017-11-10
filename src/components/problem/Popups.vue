@@ -33,6 +33,18 @@
         </div>
       </div>
     </div>
+    <div class="am-popup" id="problem-feedback-submit-popup">
+      <div class="am-popup-inner">
+        <div class="am-popup-hd">
+          <h4 class="am-popup-title">提交反馈</h4>
+          <span data-am-modal-close class="am-close">&times;</span>
+        </div>
+        <div class="am-popup-bd">
+          <div id="problem-feedback-submit-editor" style="height: 45rem;"></div>
+          <button type="button" class="am-btn am-btn-success am-radius am-btn-block" id="problem-feedback-submit-btn">提交</button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -56,6 +68,12 @@ export default {
     window.$('#select-language-dropdown').dropdown({
       boundary: '#problem-submit-popup'
     })
+    /* eslint-disable no-unused-vars */
+    let quill = new window.Quill('#problem-feedback-submit-editor', {
+      theme: 'snow',
+      placeholder: '请在这里输入您的反馈内容~我们的成长离不开您的陪伴~感谢~'
+    })
+    /* eslint-enable */
   }
 }
 </script>
@@ -65,5 +83,9 @@ export default {
   width: 100%;
   height: 45rem;
   margin: 1.5rem 0;
+}
+
+#problem-feedback-submit-btn {
+  margin-top: 1.5rem;
 }
 </style>

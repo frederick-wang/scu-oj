@@ -143,15 +143,15 @@
               <div class="content">
                 <table style="width: 100%;">
                   <tr>
-                    <td>总题数</td>
+                    <td style="font-weight: normal;">总题数</td>
                     <td align="right">10</td>
                   </tr>
                   <tr>
-                    <td>参赛人数</td>
+                    <td style="font-weight: normal;">参赛人数</td>
                     <td align="right">36</td>
                   </tr>
                   <tr>
-                    <td>AK人数</td>
+                    <td style="font-weight: normal;">AK人数</td>
                     <td align="right">12</td>
                   </tr>
                 </table>
@@ -162,31 +162,33 @@
                 <h2>我的情况</h2>
               </div>
               <div class="content">
-                <table style="width: 100%;">
-                  <tr>
-                    <td>总题数</td>
-                    <td align="right">10</td>
-                  </tr>
-                  <tr>
-                    <td>已完成</td>
-                    <td align="right">6</td>
-                  </tr>
-                  <tr>
-                    <td>总提交数</td>
-                    <td align="right">72</td>
-                  </tr>
-                  <tr>
-                    <td>通过率</td>
-                    <td align="right">18.33%</td>
-                  </tr>
-                  <tr>
-                    <td>总耗时</td>
-                    <td align="right">1小时29分</td>
-                  </tr>
-                  <tr>
-                    <td>当前排名</td>
-                    <td align="right">20</td>
-                  </tr>
+                <table style="width: 100%; border-collapse: separate; border-spacing: 0 0.5rem;">
+                  <tbody>
+                    <tr>
+                      <td style="font-weight: normal;">总题数</td>
+                      <td align="right">10</td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight: normal;">您已完成</td>
+                      <td align="right">6</td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight: normal;">总提交数</td>
+                      <td align="right">72</td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight: normal;">通过率</td>
+                      <td align="right">78.86%</td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight: normal;">总耗时</td>
+                      <td align="right">15 小时 28 分</td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight: normal;">当前排名</td>
+                      <td align="right">1</td>
+                    </tr>
+                  </tbody>
                 </table>
                 <br/>
                 <button class="am-btn am-btn-default am-btn-block">
@@ -276,6 +278,7 @@ export default {
 .nav-bar-wrapper .nav-bar .logo {
   padding-left: 1rem;
   font-size: 1.8rem;
+  font-weight: normal;
 }
 
 .nav-bar .item {

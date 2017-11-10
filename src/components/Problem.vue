@@ -27,9 +27,9 @@
                 </div>
                 <div class="buttons">
                   <a href="javascript:" class="item am-icon-btn am-icon-search" id="button-web-search" @click="$root.openLink('https://www.baidu.com/s?wd=' + $root.database[$route.params.id - 1].title)"></a>
-                  <a href="javascript:" class="item am-icon-btn am-danger am-icon-map-o" id="button-answer"></a>
-                  <a href="javascript:" class="item am-icon-btn am-warning am-icon-hand-paper-o" id="button-feedback"></a>
-                  <a href="javascript:" class="item am-icon-btn am-secondary am-icon-bar-chart" id="button-status"></a>
+                  <a href="javascript:" class="item am-icon-btn am-danger am-icon-map-o" id="button-solution" @click="onSolutionClick"></a>
+                  <a href="javascript:" class="item am-icon-btn am-warning am-icon-hand-paper-o" id="button-feedback" data-am-modal="{target: '#problem-feedback-submit-popup'}"></a>
+                  <a href="javascript:" class="item am-icon-btn am-secondary am-icon-bar-chart" id="button-record" @click="onRecordClick"></a>
                   <a href="javascript:" class="item am-icon-btn am-primary am-icon-comments-o" id="button-discuss" @click="onDiscussClick"></a>
                   <a href="javascript:" class="item am-icon-btn am-success am-icon-paper-plane-o" id="button-submit" data-am-modal="{target: '#problem-submit-popup'}"></a>
                 </div>
@@ -83,46 +83,30 @@
               </div>
               <div class="content">
                 <div class="status">
-                  <div class="am-g">
-                    <div class="highlight am-u-sm-6">
-                      总提交数
-                    </div>
-                    <div class="am-u-sm-6 am-text-center">
-                      20
-                    </div>
-                  </div>
-                  <div class="am-g">
-                    <div class="highlight am-u-sm-6">
-                      通过数
-                    </div>
-                    <div class="am-u-sm-6 am-text-center">
-                      0
-                    </div>
-                  </div>
-                  <div class="am-g">
-                    <div class="highlight am-u-sm-6">
-                      通过率
-                    </div>
-                    <div class="am-u-sm-6 am-text-center">
-                      0%
-                    </div>
-                  </div>
-                  <div class="am-g">
-                    <div class="highlight am-u-sm-6">
-                      已耗时
-                    </div>
-                    <div class="am-u-sm-6 am-text-center">
-                      45 分
-                    </div>
-                  </div>
-                  <div class="am-g">
-                    <div class="highlight am-u-sm-6">
-                      题目状态
-                    </div>
-                    <div class="am-u-sm-6 am-text-center">
-                      Failed
-                    </div>
-                  </div>
+                  <table style="width: 100%; border-collapse: separate; border-spacing: 0 0.5rem;">
+                    <tbody>
+                      <tr>
+                        <td style="font-weight: normal;">总提交数</td>
+                        <td align="right">20</td>
+                      </tr>
+                      <tr>
+                        <td style="font-weight: normal;">通过数</td>
+                        <td align="right">0</td>
+                      </tr>
+                      <tr>
+                        <td style="font-weight: normal;">通过率</td>
+                        <td align="right">0 %</td>
+                      </tr>
+                      <tr>
+                        <td style="font-weight: normal;">已耗时 </td>
+                        <td align="right">18 分</td>
+                      </tr>
+                      <tr>
+                        <td style="font-weight: normal;">题目状态</td>
+                        <td align="right">Failed</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
@@ -185,6 +169,14 @@ export default {
     onDiscussClick () {
       window.$('#button-discuss').popover('close')
       this.$router.push('/discuss/p' + this.$route.params.id)
+    },
+    onSolutionClick () {
+      window.$('#button-solution').popover('close')
+      this.$router.push('/solution/' + this.$route.params.id)
+    },
+    onRecordClick () {
+      window.$('#button-record').popover('close')
+      this.$router.push('/record/' + this.$route.params.id)
     }
   },
   mounted () {
@@ -205,7 +197,7 @@ export default {
       })
     })
     $(function () {
-      $('#button-status').popover({
+      $('#button-record').popover({
         content: '查看提交记录',
         trigger: 'hover focus',
         theme: 'secondary sm'
@@ -219,7 +211,7 @@ export default {
       })
     })
     $(function () {
-      $('#button-answer').popover({
+      $('#button-solution').popover({
         content: '真的不会做了吗？确定要查看题解吗？',
         trigger: 'hover focus',
         theme: 'danger sm'
@@ -273,6 +265,7 @@ export default {
 .nav-bar-wrapper .nav-bar .logo {
   padding-left: 1rem;
   font-size: 1.8rem;
+  font-weight: normal;
   font-weight: normal;
 }
 

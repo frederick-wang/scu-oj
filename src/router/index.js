@@ -6,6 +6,8 @@ import ContestList from '@/components/ContestList'
 import Problem from '@/components/Problem'
 import Contest from '@/components/Contest'
 import Discuss from '@/components/Discuss'
+import Solution from '@/components/Solution'
+import Record from '@/components/Record'
 
 Vue.use(Router)
 
@@ -40,6 +42,16 @@ export default new Router({
       path: '/discuss/:id',
       name: 'Discuss',
       component: Discuss
+    },
+    {
+      path: '/solution/:id',
+      name: 'Solution',
+      component: Solution
+    },
+    {
+      path: '/record/:id',
+      name: 'Record',
+      component: Record
     },
     {
       path: '*',

@@ -77,54 +77,34 @@
                   <img src="../../assets/icpc_logo.png" class="am-img-responsive" alt="" />
                 </div>
                 <div class="status">
-                  <div class="am-g">
-                    <div class="highlight am-u-sm-4">
-                      总题数
-                    </div>
-                    <div class="am-u-sm-6 am-text-center">
-                      10
-                    </div>
-                  </div>
-                  <div class="am-g">
-                    <div class="highlight am-u-sm-6">
-                      您已完成
-                    </div>
-                    <div class="am-u-sm-6 am-text-center">
-                      6
-                    </div>
-                  </div>
-                  <div class="am-g">
-                    <div class="highlight am-u-sm-6">
-                      总提交数
-                    </div>
-                    <div class="am-u-sm-6 am-text-center">
-                      72
-                    </div>
-                  </div>
-                  <div class="am-g">
-                    <div class="highlight am-u-sm-6">
-                      通过率
-                    </div>
-                    <div class="am-u-sm-6 am-text-center">
-                      78.86%
-                    </div>
-                  </div>
-                  <div class="am-g">
-                    <div class="highlight am-u-sm-6">
-                      总耗时
-                    </div>
-                    <div class="am-u-sm-6 am-text-center">
-                      15 小时 28 分
-                    </div>
-                  </div>
-                  <div class="am-g">
-                    <div class="highlight am-u-sm-6">
-                      当前排名
-                    </div>
-                    <div class="am-u-sm-6 am-text-center">
-                      1
-                    </div>
-                  </div>
+                  <table style="width: 100%; border-collapse: separate; border-spacing: 0 0.5rem;">
+                    <tbody>
+                      <tr>
+                        <td style="font-weight: normal;">总题数</td>
+                        <td align="right">10</td>
+                      </tr>
+                      <tr>
+                        <td style="font-weight: normal;">您已完成</td>
+                        <td align="right">6</td>
+                      </tr>
+                      <tr>
+                        <td style="font-weight: normal;">总提交数</td>
+                        <td align="right">72</td>
+                      </tr>
+                      <tr>
+                        <td style="font-weight: normal;">通过率</td>
+                        <td align="right">78.86%</td>
+                      </tr>
+                      <tr>
+                        <td style="font-weight: normal;">总耗时</td>
+                        <td align="right">15 小时 28 分</td>
+                      </tr>
+                      <tr>
+                        <td style="font-weight: normal;">当前排名</td>
+                        <td align="right">1</td>
+                      </tr>
+                    </tbody>
+                  </table>
                   <br/>
                   <button class="am-btn am-btn-default am-btn-block" @click="$router.push('/contest/7')">
                     <i class="am-icon-check"></i>
@@ -224,6 +204,7 @@ export default {
 .nav-bar-wrapper .nav-bar .logo {
   padding-left: 1rem;
   font-size: 1.8rem;
+  font-weight: normal;
 }
 
 .nav-bar .item {
