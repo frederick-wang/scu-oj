@@ -138,8 +138,8 @@ export default {
     })
   },
   beforeRouteLeave (to, from, next) {
-    window.$.fn.fullpage.destroy('all')
     next()
+    // window.$.fn.fullpage.destroy('all')
   }
 }
 </script>

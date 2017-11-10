@@ -1,5 +1,6 @@
 <template>
   <div class="problem-list">
+    <div class="problem-bg"></div>
     <transition name="fade">
       <div class="nav-bar-wrapper">
         <div class="nav-bar">
@@ -277,5 +278,17 @@ export default {
   font-size: 1.2rem;
   line-height: 2.4rem;
   margin: 0;
+}
+
+.problem-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../assets/index-bg-problem.jpg") top no-repeat;
+  background-image: url("../assets/index-bg-problem.jpg");
+  background-size: cover;
+  opacity: 0.2;
 }
 </style>

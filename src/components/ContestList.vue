@@ -1,5 +1,6 @@
 <template>
   <div class="contest-list">
+    <div class="contest-bg"></div>
     <transition name="fade">
       <div class="nav-bar-wrapper">
         <div class="nav-bar">
@@ -279,5 +280,17 @@ export default {
   font-size: 1.2rem;
   line-height: 2.4rem;
   margin: 0;
+}
+
+.contest-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../assets/index-bg-contest.jpg") top no-repeat;
+  background-image: url("../assets/index-bg-contest.jpg");
+  background-size: cover;
+  opacity: 0.2;
 }
 </style>

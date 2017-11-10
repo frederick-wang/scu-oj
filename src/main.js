@@ -5,6 +5,13 @@ import App from './App'
 import router from './router'
 
 Vue.config.productionTip = false
+router.afterEach((to, from) => {
+  setTimeout(() => {
+    if (to.name !== 'Index' && window.$('html').hasClass('fp-enabled')) {
+      window.$.fn.fullpage.destroy('all')
+    }
+  }, 100)
+})
 
 /* eslint-disable no-new */
 new Vue({

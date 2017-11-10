@@ -1,6 +1,7 @@
 <template>
   <div class="solution">
     <Popups></Popups>
+    <div class="problem-bg"></div>
     <transition name="fade">
       <div class="nav-bar-wrapper">
         <div class="nav-bar">
@@ -314,5 +315,17 @@ h3:first-child {
 .solution-header .buttons .item:hover,
 .solution-header .buttons .item:focus {
   opacity: 1;
+}
+
+.problem-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../assets/index-bg-problem.jpg") top no-repeat;
+  background-image: url("../assets/index-bg-problem.jpg");
+  background-size: cover;
+  opacity: 0.2;
 }
 </style>
