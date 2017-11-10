@@ -30,7 +30,7 @@
                   </thead>
                   <tbody>
                     <tr v-for="item in $root.scuOjContestsInformation.slice(0,4)" :key="item.id" @click="$router.push(`/contest/${item.id}`)" style="cursor: pointer;">
-                      <td>{{item.name}}</td>
+                      <td style="font-weight: normal;">{{item.name}}</td>
                       <td>{{item.start_time}}</td>
                       <td>{{item.week}}</td>
                     </tr>
@@ -56,7 +56,7 @@
                   <tbody>
                     <tr v-for="item in $root.ojContestsInformation.slice(0,3)" :key="item.id" @click="$root.openLink(item.link)" style="cursor: pointer;">
                       <td class="am-text-middle">{{item.oj}}</td>
-                      <td class="am-text-middle">{{item.name}}</td>
+                      <td class="am-text-middle" style="font-weight: normal;">{{item.name}}</td>
                       <td class="am-text-middle">{{item.start_time}}</td>
                       <td class="am-text-middle">{{item.access}}</td>
                     </tr>

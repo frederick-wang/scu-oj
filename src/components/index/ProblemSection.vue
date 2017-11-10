@@ -33,7 +33,7 @@
                   <tbody>
                     <tr v-for="item in $root.database.slice(10,14)" :key="item.id" @click="$router.push(`/problem/${item.id}`)" style="cursor: pointer;">
                       <td>[{{item.number}}]</td>
-                      <td>{{item.title}}</td>
+                      <td style="font-weight: normal;">{{item.title}}</td>
                       <td>Accepted</td>
                     </tr>
                   </tbody>
